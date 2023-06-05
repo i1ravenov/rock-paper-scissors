@@ -1,4 +1,5 @@
 const CHOICES = ["rock", "paper", "scissors"];
+const ROUNDS_NUMBER = 5;
 
 function randomInt(n) {
   return Math.floor(Math.random() * n);
@@ -32,9 +33,8 @@ function playRound(playerMove, computerMove = getComputerChoice()) {
 }
 
 function game() {
-  const ROUND_N = 5;
   let playerScore = 0;
-  for (let i = 0; i < ROUND_N; i++) {
+  for (let i = 0; i < ROUNDS_NUMBER; i++) {
     let playerMove = getPlayerMove();
     let playResult = playRound(playerMove);
     console.log(playResult);
@@ -42,9 +42,8 @@ function game() {
       playerScore++;
     }
   }
-  if (playerScore > ROUND_N / 2) {
+  if (playerScore > ROUNDS_NUMBER / 2) {
     console.log(`You won the series of rounds with
-    score ${playerScore} out of ${ROUND_N}`);
+    score ${playerScore} out of ${ROUNDS_NUMBER}`);
   }
-
 }
