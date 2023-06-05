@@ -25,6 +25,8 @@ function playRound(playerMove, computerMove = getComputerChoice()) {
     || playerMove === "scissors" && computerMove === "rock"
     || playerMove === "paper" && computerMove == "scissors") {
     return `You Lose! ${computerMove} beats ${playerMove}`;
+  } else if (playerMove === computerMove) {
+    return `Draw for a round ${playerMove} and ${computerMove}`; 
   }
   return `You Won! ${playerMove} beats ${computerMove}`;
 }
