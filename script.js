@@ -25,11 +25,11 @@ function playRound(playerMove, computerMove = getComputerChoice()) {
   if (playerMove === "rock" && computerMove === "paper"
     || playerMove === "scissors" && computerMove === "rock"
     || playerMove === "paper" && computerMove == "scissors") {
-    return `You Lose! ${computerMove} beats ${playerMove}`;
+    return `You lose, ${computerMove} beats ${playerMove}`;
   } else if (playerMove === computerMove) {
-    return `Draw for a round ${playerMove} and ${computerMove}`; 
+    return `Draw for a round, ${playerMove} and ${computerMove}`; 
   }
-  return `You Won! ${playerMove} beats ${computerMove}`;
+  return `You won, ${playerMove} beats ${computerMove}`;
 }
 
 function game() {
@@ -38,7 +38,7 @@ function game() {
     let playerMove = getPlayerMove();
     let playResult = playRound(playerMove);
     console.log(playResult);
-    if (playResult.includes("Won!")) {
+    if (playResult.includes("won")) {
       playerScore++;
     }
   }
@@ -47,3 +47,11 @@ function game() {
     score ${playerScore} out of ${ROUNDS_NUMBER}`);
   }
 }
+
+const buttons = document.querySelectorAll(".btn");
+buttons.forEach(b => {
+  b.addEventListener('click', (e) => {
+    console.log(playRound(e.target.dataset.move));
+
+  })
+});
