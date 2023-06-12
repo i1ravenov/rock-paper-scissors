@@ -1,6 +1,9 @@
 const CHOICES = ["rock", "paper", "scissors"];
 const WIN_SCORE = 5;
 
+let playerScore = 0;
+let computerScore = 0;
+
 function randomInt(n) {
   return Math.floor(Math.random() * n);
 }
@@ -13,45 +16,69 @@ function playRound(playerMove, computerMove = getComputerChoice()) {
   if (playerMove === "rock" && computerMove === "paper"
     || playerMove === "scissors" && computerMove === "rock"
     || playerMove === "paper" && computerMove == "scissors") {
-    return `You lose, ${computerMove} beats ${playerMove}`;
+    return `You lost, ${computerMove} beats ${playerMove}.`;
   } else if (playerMove === computerMove) {
-    return `Draw for a round, ${playerMove} and ${computerMove}`;
+    return `Draw for a round, ${playerMove} and ${computerMove}.`;
   }
-  return `You won, ${playerMove} beats ${computerMove}`;
+  return `You won, ${playerMove} beats ${computerMove}.`;
 }
 
 const buttons = document.querySelectorAll(".move");
 const resDiv = document.querySelector(".round-results");
-let playerScore = 0;
-let computerScore = 0;
+const playerPara = document.querySelector(".player-score");
+
+
+function displayScore(pScore, cScore) {
+  const playerScore = document.querySelector("#pscore");
+  playerScore.innerText = pScore;
+  const computerScore = document.querySelector("#cscore");
+  computerScore.innerText = cScore;
+  if (pScore === WIN_SCORE) {
+    clear();
+    return " You won in game series";
+  }
+  if (cScore === WIN_SCORE) {
+    clear();
+    return " You lost in game series"; 
+  }
+}
+
 buttons.forEach(b => {
   b.addEventListener('click', (e) => {
-    const res = playRound(e.target.dataset.move);
+    let res = playRound(e.target.dataset.move);
     if (res.includes("won")) {
       playerScore++;
     }
-    if (res.includes("lose")) {
+    if (res.includes("lost")) {
       computerScore++;
     }
-    const para = document.createElement('p');
+    const gameResult = displayScore(playerScore, computerScore);
+    if (gameResult) {
+      res += gameResult;
+    }
+    const para = document.querySelector('.round-text-res');
     para.innerText = res;
-    document.body.appendChild(para);
-    resDiv.appendChild(para);
-  })
+    })
 });
 
 const resetButton = document.querySelector(".reset-btn");
 
-resetButton.addEventListener('click', (e) => {
+function clear() {
   resetButton.classList.add("hide");
-  resDiv.textContent = "";
+  const para = document.querySelector('.round-text-res');
+  para.textContent = "";
+  playerScore = 0;
+  computerScore = 0;
+  displayScore(playerScore, computerScore);
+}
+
+resetButton.addEventListener('click', (e) => {
+  clear();
 });
 
 const config = { attributes: true, childList: true, subtree: true };
-let mttn;
+
 const callback = (mutation, observer) => {
-  mttn = mutation;
-  console.log(mutation);
   if (mutation[0].addedNodes.length >= 1) {
     resetButton.classList.remove("hide");
   }

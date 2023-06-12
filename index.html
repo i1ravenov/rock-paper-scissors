@@ -18,10 +18,24 @@
     <button class="move" data-move="scissors">Scissors</button>
   </div>
 
+  <p class="info">The winner is the first who gets 5 points</p>
 
-  <div class="round-results"></div>
+  <p class="round-text-res"></p>
+  <div class="round-results">
+    <div class="player-score">
+      <p>Player score:</p>
+      <p id="pscore">0</p>
+    </div>
+    <div class="computer-score">
+      <p>Computer score:</p> 
+      <p id="cscore">0</p>
+    </div>
+  </div>
 
-  <button class="reset-btn hide">Restart game</button>
+  <div class="reset-container">
+    <button class="reset-btn">Restart game</button>
+  </div>
+
 </body>
 
 </html>

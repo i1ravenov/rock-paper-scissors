@@ -1,3 +1,30 @@
 .hide {
     display: none;
 }
+
+.round-results {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.player-move {
+    display: flex;
+    justify-content: space-around;
+}
+
+.reset-container {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player-score,
+.computer-score {
+    text-align: center;
+}
