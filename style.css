@@ -23,6 +23,11 @@
     justify-content: center;
 }
 
+.reset-btn {
+    font-size: 3.5vw;
+    border-radius: 5px;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -31,6 +36,7 @@ body {
 
 p {
     text-align: center;
+    font-size: 3.5vw;
 }
 
 .player-score,
