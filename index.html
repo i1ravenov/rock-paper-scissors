@@ -12,30 +12,36 @@
 
 <body>
 
-  <div class="player-move">
-    <input type="image" src="./img/stone.svg" name="Rock" class="move" data-move="rock" />
-    <input type="image" src="./img/paper.svg" name="Paper" class="move" data-move="paper"/>
-    <input type="image" src="./img/scissors.svg" name="Scissors" class="move" data-move="scissors"/>
-  </div>
+  <div class="main">
+    <div class="wrapper">
 
-  <p class="info">Get <span style="font-weight: bold;">5</span> points to win</p>
+      <div class="player-move">
+        <input type="image" src="./img/stone.svg" name="Rock" class="move" data-move="rock" />
+        <input type="image" src="./img/paper.svg" name="Paper" class="move" data-move="paper" />
+        <input type="image" src="./img/scissors.svg" name="Scissors" class="move" data-move="scissors" />
+      </div>
 
-  <p class="round-text-res"></p>
-  <div class="round-results">
-    <div class="player-score">
-      <p>Your score:</p>
-      <p id="pscore">0</p>
+      <p class="info">Get <span style="font-weight: bold;">5</span> points to win</p>
+
+      <p class="round-text-res"></p>
+      <div class="round-results">
+        <div class="player-score">
+          <p>Your score:</p>
+          <p id="pscore">0</p>
+        </div>
+        <div class="computer-score">
+          <p>Computer's score:</p>
+          <p id="cscore">0</p>
+        </div>
+      </div>
+
+      <div class="reset-container">
+        <button class="reset-btn">Restart game</button>
+      </div>
+
+
     </div>
-    <div class="computer-score">
-      <p>Computer's score:</p> 
-      <p id="cscore">0</p>
-    </div>
   </div>
-
-  <div class="reset-container">
-    <button class="reset-btn">Restart game</button>
-  </div>
-
 </body>
 
 </html>

@@ -29,7 +29,28 @@ body {
     align-items: center;
 }
 
+p {
+    text-align: center;
+}
+
 .player-score,
 .computer-score {
     text-align: center;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+
+.wrapper {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
 }

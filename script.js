@@ -35,11 +35,11 @@ function displayScore(pScore, cScore) {
   computerScore.innerText = cScore;
   if (pScore === WIN_SCORE) {
     clear();
-    return " You won in game series";
+    return " You won in a game series";
   }
   if (cScore === WIN_SCORE) {
     clear();
-    return " You lost in the game!"; 
+    return " You lost in a game series!"; 
   }
 }
 
