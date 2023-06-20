@@ -39,7 +39,7 @@ function displayScore(pScore, cScore) {
   }
   if (cScore === WIN_SCORE) {
     clear();
-    return " You lost in game series"; 
+    return " You lost in the game!"; 
   }
 }
 
@@ -54,10 +54,10 @@ buttons.forEach(b => {
     }
     const gameResult = displayScore(playerScore, computerScore);
     if (gameResult) {
-      res += gameResult;
+      res += "<p style='font-weight: bold'>" + gameResult + "</p>";
     }
     const para = document.querySelector('.round-text-res');
-    para.innerText = res;
+    para.innerHTML = res;
     })
 });
 

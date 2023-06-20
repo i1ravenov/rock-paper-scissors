@@ -13,6 +13,11 @@
     justify-content: space-around;
 }
 
+.move {
+    width: 30vw;
+    height: auto;
+}
+
 .reset-container {
     display: flex;
     justify-content: center;

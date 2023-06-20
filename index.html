@@ -13,21 +13,21 @@
 <body>
 
   <div class="player-move">
-    <button class="move" data-move="rock">Rock</button>
-    <button class="move" data-move="paper">Paper</button>
-    <button class="move" data-move="scissors">Scissors</button>
+    <input type="image" src="./img/stone.svg" name="Rock" class="move" data-move="rock" />
+    <input type="image" src="./img/paper.svg" name="Paper" class="move" data-move="paper"/>
+    <input type="image" src="./img/scissors.svg" name="Scissors" class="move" data-move="scissors"/>
   </div>
 
-  <p class="info">The winner is the first who gets 5 points</p>
+  <p class="info">Get <span style="font-weight: bold;">5</span> points to win</p>
 
   <p class="round-text-res"></p>
   <div class="round-results">
     <div class="player-score">
-      <p>Player score:</p>
+      <p>Your score:</p>
       <p id="pscore">0</p>
     </div>
     <div class="computer-score">
-      <p>Computer score:</p> 
+      <p>Computer's score:</p> 
       <p id="cscore">0</p>
     </div>
   </div>
