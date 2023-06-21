@@ -14,7 +14,7 @@
 }
 
 .move {
-    width: 30vw;
+    width: min(200px, 30vw);
     height: auto;
 }
 
